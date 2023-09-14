@@ -1,0 +1,39 @@
+name: Typescript Dummy CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: alpine-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.17.1
+
+      - name: Install dependencies
+        run: |
+          npm i -g typescript
+
+      - name: Run dummy test
+        run: |
+          tsc
+          node dist/*.js
+          echo "GitHub workflow ran SUCCESSFULLY !"
+
+#      - name: Build and save Docker image
+#        run: |
+#          docker build -t q5_image .
+#          docker save -o './source/questions/question5/ignoredbypytest/q5_image.tar' q5_image
+#          
+#      - name: Auto commit and push coverage report and docker image
+#        uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Commit and push coverage report and Docker image
+#          file_pattern: './source/questions/question5/CoverageReport.json ./source/questions/question5/ignoredbypytest/q5_image.tar'
+#          branch: main
