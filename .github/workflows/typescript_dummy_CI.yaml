@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: alpine-latest
+    runs-on: debian-latest
 
     steps:
       - name: Checkout code
@@ -24,7 +24,11 @@ jobs:
         run: |
           tsc
           node dist/*.js
+
+      - name: Declare Success
+        run: |
           echo "GitHub workflow ran SUCCESSFULLY !"
+        
 
 #      - name: Build and save Docker image
 #        run: |
