@@ -30,16 +30,9 @@ function test_correct_output2()
 
 function unittest_output_strings()
 {
-    let error: Boolean = false;
-
-    try {test_correct_output1();}
-    catch (e) {console.log("Test 1 FAIL : " + e); error = true;}
-
-    try {test_correct_output2();}
-    catch (e) {console.log("Test 2 FAIL : ", e); error = true;}
-
-    if (!error) {
-        console.log("All tests passed SUCCESSFULLY !");}
+    test_correct_output1();
+    test_correct_output2();
+    console.log("All tests passed SUCCESSFULLY !");
 }
 
 unittest_output_strings();
