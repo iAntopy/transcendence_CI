@@ -24,7 +24,7 @@ jobs:
         run: |
           tsc
           ls dist/
-          node dist/*.js
+          node dist/test_script.js
 
       - name: Declare Success
         run: |
