@@ -9,3 +9,5 @@ You will need to student pack from github.
 * Click on "Typescript Dummy CI" on Left
 * Click on "Run workflow-> main branch" on Right
 * The workflow will FAIL but thats what we want.
+
+* tested by loyc
