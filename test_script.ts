@@ -6,7 +6,7 @@ interface Answers {
 }
 let expected_answers: Answers = {
     asw_test1: 'Hello World',
-    asw_test2: 'Goodbye1 World'
+    asw_test2: 'Goodbye World'
 };
 
 function test_correct_output1()
